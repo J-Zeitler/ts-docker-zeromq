@@ -1,0 +1,17 @@
+{
+  "name": "greetsource",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc-watch -p ./src --onSuccess \"node dist/index.js\""
+  },
+  "keywords": [],
+  "author": "J-Zeitler",
+  "license": "ISC",
+  "dependencies": {
+    "zeromq": "^4.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^8.5.8"
+  }
+}

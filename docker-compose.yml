@@ -1,0 +1,25 @@
+version: '3.1'
+
+services:
+  greetsource:
+    build: ./greetsource
+    command: npm run build
+    environment:
+      NODE_ENV: production
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./greetsource:/home/microdsc/greetsource
+      - /home/microdsc/greetsource/node_modules
+  greetsink:
+    build: ./greetsink
+    command: npm run build
+    environment:
+      NODE_ENV: production
+      CONNECT_HOST: greetsource
+      CONNECT_PORT: 8080
+    ports:
+      - "8082:8080"
+    volumes:
+      - ./greetsink:/home/microdsc/greetsink
+      - /home/microdsc/greetsink/node_modules
